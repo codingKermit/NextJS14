@@ -1,4 +1,5 @@
-import Link from "next/link";
+import Movie from "../../components/movie";
+import styles from '../../styles/home.module.css';
 
 // 서버 컴포넌트에서는 metadata도 사용 가능
 export const metadata = {
@@ -23,16 +24,10 @@ export default async function HomePage(){
     // 내부에서 async/await 함수를 통한 data fetch
     const movies = await getMovies();
     return (
-        <div>
-            {movies.map((movie)=>{
-                return (
-                    <li key={movie.id}>
-                        <Link href={`/movies/${movie.id}`}>
-                            {movie.title}
-                        </Link>
-                    </li>
-                )
-            })}
+        <div className={styles.container}>
+            {movies.map((movie)=>(
+                <Movie id={movie.id} poster_path={movie.poster_path} title={movie.id} key={movie.id}/>
+            ))}
         </div>
     )
 }
