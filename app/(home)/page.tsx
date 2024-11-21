@@ -1,12 +1,13 @@
 import Movie from "../../components/movie";
 import styles from '../../styles/home.module.css';
+import { API_URL } from "../layout";
 
 // 서버 컴포넌트에서는 metadata도 사용 가능
 export const metadata = {
     title : 'Home'
 }
 
-export const API_URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
+
 
 // data fetch할 async/await 문법의 함수 
 async function getMovies(){     
