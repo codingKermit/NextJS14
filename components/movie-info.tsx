@@ -1,7 +1,7 @@
 import { API_URL } from "../app/(home)/page";
 import styles from '../styles/movie-info.module.css';
 
-async function getMovie(id:string){
+export async function getMovie(id:string){
     // 작업이 오래 걸리는 경우를 가정 
     // await new Promise((resolve)=>setTimeout(resolve,5_000));
     

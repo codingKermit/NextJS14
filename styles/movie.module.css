@@ -17,6 +17,6 @@
   .movie img:hover {
     opacity: 1;
   }
-  .movie a {
+  .movie {
     text-align: center;
   }

@@ -1,15 +1,21 @@
 import { Suspense } from "react";
-import { API_URL } from "../../../(home)/page";
-import MovieInfo from "../../../../components/movie-info";
+import MovieInfo, { getMovie } from "../../../../components/movie-info";
 import MovieVidoes from "../../../../components/movie-videos";
 
+interface IParams {
+    params : {id:string};
+}
+
+export async function generateMetadata({params:{id}}: IParams){
+    // 구조적으로 인해 getMovie 두번 호출 되지만 실제로는 Next.js에서 이미 호출한 요청에 대해서는 캐싱을 하기 때문에 호출 되지 않음 
+    const movie = await getMovie(id);
+    return {
+        title : movie.title
+    }
+}
 
 
-export default async function MovieDetail({
-    params : { id }
-}:{
-    params : { id : string };
-}){
+export default async function MovieDetail({ params : { id } }: IParams ){
 
     return(
         <div>

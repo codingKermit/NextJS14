@@ -26,7 +26,7 @@ export default async function HomePage(){
     return (
         <div className={styles.container}>
             {movies.map((movie)=>(
-                <Movie id={movie.id} poster_path={movie.poster_path} title={movie.id} key={movie.id}/>
+                <Movie id={movie.id} poster_path={movie.poster_path} title={movie.title} key={movie.id}/>
             ))}
         </div>
     )
