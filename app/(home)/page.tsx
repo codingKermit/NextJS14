@@ -1,6 +1,6 @@
 import Movie from "../../components/movie";
 import styles from '../../styles/home.module.css';
-import { API_URL } from "../layout";
+import { API_URL } from "./utils";
 
 // 서버 컴포넌트에서는 metadata도 사용 가능
 export const metadata = {
